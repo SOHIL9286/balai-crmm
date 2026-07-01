@@ -43,7 +43,7 @@ export default function LoginPage() {
           <div className="mx-auto flex h-14 w-full max-w-[220px] items-center justify-center rounded-3xl bg-[var(--surface)] p-3 shadow-sm">
             <BalajiLogo className="max-h-10 w-auto" />
           </div>
-          <p className="mt-5 text-sm uppercase tracking-[0.24em] text-[var(--brand-blue)]">Attéche Insurance</p>
+          <p className="mt-5 text-sm uppercase tracking-[0.24em] text-[var(--brand-blue)]">Balaji Insurance</p>
           <h1 className="mt-3 text-3xl font-semibold text-slate-900">Sign in to your account</h1>
           <p className="mt-3 text-sm text-[var(--text-muted)]">Use balaji.ins.fin@gmail.com with password admin to log in.</p>
         </div>
