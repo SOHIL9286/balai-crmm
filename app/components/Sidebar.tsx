@@ -46,7 +46,7 @@ const sections: SidebarSection[] = [
   {
     title: "Policy",
     items: [
-      { href: "/dashboard", label: "Add Policy", icon: Sparkles },
+      { href: "/add-policy", label: "Add Policy", icon: Sparkles },
       { href: "/documents", label: "Policies", icon: FileText },
       { href: "/insurance-renewal", label: "Renewals", icon: Shield },
       { href: "/rto-work", label: "Claims", icon: Clipboard },
