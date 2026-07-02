@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { signInWithEmail } from "@/app/login/actions";
-import { BalajiLogo } from "@/app/components/BalajiLogo";
+import { AttecheLogo } from "@/app/components/AttecheLogo";
 
 function LoginForm() {
   return (
@@ -40,10 +40,9 @@ export default function LoginPage() {
     <main className="flex min-h-screen items-center justify-center bg-slate-50 px-4">
       <div className="w-full max-w-md rounded-3xl border border-slate-200 bg-white p-10 shadow-sm">
         <div className="mb-8 text-center">
-          <div className="mx-auto flex h-14 w-full max-w-[220px] items-center justify-center rounded-3xl bg-[var(--surface)] p-3 shadow-sm">
-            <BalajiLogo className="max-h-10 w-auto" />
+          <div className="mx-auto flex h-16 w-full max-w-[260px] items-center justify-center rounded-3xl bg-[var(--surface)] p-3 shadow-sm">
+            <AttecheLogo className="h-12 w-auto" />
           </div>
-          <p className="mt-5 text-sm uppercase tracking-[0.24em] text-[var(--brand-blue)]">Balaji Insurance</p>
           <h1 className="mt-3 text-3xl font-semibold text-slate-900">Sign in to your account</h1>
           <p className="mt-3 text-sm text-[var(--text-muted)]">Use balaji.ins.fin@gmail.com with password admin to log in.</p>
         </div>

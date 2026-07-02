@@ -21,7 +21,7 @@ import {
   Wallet,
   X,
 } from "lucide-react";
-import { BalajiLogo } from "@/app/components/BalajiLogo";
+import { AttecheLogo } from "@/app/components/AttecheLogo";
 
 interface SidebarItem {
   href: string;
@@ -107,12 +107,11 @@ export function Sidebar({ showMobile = false, onClose }: SidebarProps) {
       >
         <div className="mb-10 flex items-center justify-between">
           <div className="flex items-center gap-3 rounded-3xl border border-slate-200 bg-slate-50 px-4 py-4 shadow-sm">
-            <div className="h-12 w-12 rounded-3xl bg-slate-900 p-3 text-white">
-              <BalajiLogo className="h-6 w-auto" />
+            <div className="flex h-14 items-center justify-center rounded-3xl bg-slate-900 px-3 py-2 text-white">
+              <AttecheLogo className="h-10 w-auto" />
             </div>
-            <div>
-              <p className="text-sm font-semibold text-slate-900">Balaji Insurance</p>
-              <p className="text-xs text-slate-500">CRM & Finance</p>
+            <div className="sr-only">
+              <p>Balaji Insurance</p>
             </div>
           </div>
           <button
