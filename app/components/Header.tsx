@@ -1,9 +1,26 @@
-import { Bell, Search, Plus, Settings, UserCircle2 } from "lucide-react";
+"use client";
+
+import { Bell, Menu, Plus, Search, Settings, UserCircle2 } from "lucide-react";
 import { signOut } from "@/app/actions/auth";
 
-export function Header() {
+interface HeaderProps {
+  onOpenSidebar?: () => void;
+}
+
+export function Header({ onOpenSidebar }: HeaderProps) {
   return (
     <header className="flex flex-col gap-4 border-b border-[var(--border)] bg-white px-6 py-5 shadow-sm sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex items-center justify-between gap-3 sm:hidden">
+        <button
+          type="button"
+          onClick={onOpenSidebar}
+          className="inline-flex h-11 w-11 items-center justify-center rounded-3xl bg-slate-100 text-slate-900 transition hover:bg-slate-200"
+        >
+          <Menu className="h-5 w-5" />
+        </button>
+        <div className="text-sm font-semibold text-slate-900">Dashboard</div>
+      </div>
+
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
         <div className="rounded-3xl bg-[var(--brand-blue-soft)] px-4 py-3 text-sm font-semibold text-[var(--brand-blue)]">Good afternoon, Sahil</div>
         <div className="flex items-center gap-2 rounded-3xl border border-[var(--border)] bg-[var(--surface)] px-4 py-3 text-sm text-[var(--text-muted)] shadow-sm">
