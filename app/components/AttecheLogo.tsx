@@ -1,11 +1,2 @@
-export function AttecheLogo({ className }: { className?: string }) {
-  return (
-    <img
-      src="/atteche-logo.svg"
-      className={className}
-      role="img"
-      aria-label="Atteche Insurance logo"
-      alt="Atteche Insurance logo"
-    />
-  );
-}
+// Re-export BalajiLogo from BalajiLogo.tsx
+export { BalajiLogo as AttecheLogo } from "./BalajiLogo";
