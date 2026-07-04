@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BALAJI Brand Identity - Premium Presentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --brand-blue: #0052CC;
+            --brand-orange: #FF7043;
+            --brand-blue-light: #E3F2FD;
+            --brand-orange-light: #FFF3E0;
+            --text-primary: #1A1A1A;
+            --text-secondary: #666666;
+            --border-color: #F0F0F0;
+            --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background: #FFFFFF;
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            padding: 80px 60px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            background: linear-gradient(135deg, rgba(0, 82, 204, 0.02) 0%, rgba(255, 112, 67, 0.02) 100%);
+        }
+
+        .header-logo {
+            max-width: 200px;
+            margin: 0 auto 40px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .header-title {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, var(--brand-blue), var(--brand-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            font-weight: 400;
+            letter-spacing: 0.3px;
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 60px;
+        }
+
+        /* ===== SECTION ===== */
+        .section {
+            margin-bottom: 120px;
+        }
+
+        .section-header {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .section-description {
+            font-size: 16px;
+            color: var(--text-secondary);
+            max-width: 600px;
+        }
+
+        /* ===== CARD ===== */
+        .card {
+            background: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+            border-color: var(--brand-blue-light);
+            transform: translateY(-2px);
+        }
+
+        .card-title {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-top: 20px;
+        }
+
+        .card-label {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-top: 8px;
+        }
+
+        /* ===== LOGO VARIANTS GRID ===== */
+        .variants-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .variant-card {
+            min-height: 280px;
+        }
+
+        .variant-preview {
+            width: 100%;
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            margin-bottom: 0;
+            background-size: 20px 20px;
+            background-image: linear-gradient(45deg, #f0f0f0 25%, transparent 25%, transparent 75%, #f0f0f0 75%, #f0f0f0),
+                              linear-gradient(45deg, #f0f0f0 25%, transparent 25%, transparent 75%, #f0f0f0 75%, #f0f0f0);
+            background-position: 0 0, 10px 10px;
+        }
+
+        .variant-preview.dark-bg {
+            background-color: #1A1A1A;
+            background-image: none;
+        }
+
+        .variant-preview img {
+            max-width: 85%;
+            max-height: 85%;
+            object-fit: contain;
+        }
+
+        /* ===== SIZES GRID ===== */
+        .sizes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .size-card {
+            padding: 30px;
+            min-height: 220px;
+        }
+
+        .size-preview {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0;
+            border-radius: 12px;
+            background: var(--brand-blue-light);
+        }
+
+        .size-preview img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .size-dimensions {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--brand-blue);
+            margin-top: 15px;
+        }
+
+        .size-usage {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-top: 8px;
+        }
+
+        /* ===== TABLE ===== */
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow);
+            margin-bottom: 60px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #FFFFFF;
+        }
+
+        thead {
+            background: linear-gradient(135deg, var(--brand-blue-light), var(--brand-orange-light));
+        }
+
+        th {
+            padding: 20px;
+            text-align: left;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        td {
+            padding: 18px 20px;
+            font-size: 14px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        td:first-child {
+            font-weight: 600;
+            color: var(--brand-blue);
+        }
+
+        /* ===== GUIDELINES ===== */
+        .guidelines-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .guidelines-card {
+            padding: 40px;
+        }
+
+        .guidelines-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .guidelines-do .guidelines-title {
+            color: #10B981;
+        }
+
+        .guidelines-dont .guidelines-title {
+            color: #EF4444;
+        }
+
+        .guidelines-list {
+            list-style: none;
+        }
+
+        .guidelines-list li {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            padding-left: 24px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .guidelines-do li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #10B981;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .guidelines-dont li::before {
+            content: '✕';
+            position: absolute;
+            left: 0;
+            color: #EF4444;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--brand-blue-light);
+            padding: 60px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .footer-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--brand-blue);
+            margin-bottom: 12px;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* ===== BADGE ===== */
+        .badge {
+            display: inline-block;
+            background: var(--brand-blue);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            margin: 0 4px 4px 0;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .variants-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+
+            .header {
+                padding: 60px 40px;
+            }
+
+            .container {
+                padding: 60px 40px;
+            }
+
+            .header-title {
+                font-size: 36px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            .header {
+                padding: 40px 20px;
+            }
+
+            .header-title {
+                font-size: 28px;
+            }
+
+            .header-subtitle {
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .variants-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .sizes-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .guidelines-grid {
+                grid-template-columns: 1fr;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            td, th {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <div class="header">
+        <div class="header-logo">
+            <img src="/balaji-logo.svg" alt="BALAJI Logo">
+        </div>
+        <h1 class="header-title">PERFECT LOGO SET</h1>
+        <p class="header-subtitle">All Sizes & Formats for Web, App & Print</p>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <!-- SECTION 1: LOGO VARIANTS -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Logo Variants</h2>
+                <p class="section-description">Professional logo versions optimized for different backgrounds and applications</p>
+            </div>
+
+            <div class="variants-grid">
+                <!-- Full Color Horizontal -->
+                <div class="card variant-card">
+                    <div class="variant-preview">
+                        <img src="/balaji-logo.svg" alt="Full Color Horizontal Logo">
+                    </div>
+                    <div class="card-title">Full Color Horizontal</div>
+                    <div class="card-label">Primary Logo</div>
+                </div>
+
+                <!-- Square Logo -->
+                <div class="card variant-card">
+                    <div class="variant-preview" style="background-color: #F5F5F5;">
+                        <img src="/balaji-logo.svg" alt="Square Logo" style="width: 80px; height: 80px;">
+                    </div>
+                    <div class="card-title">Square Logo</div>
+                    <div class="card-label">Profile & Social</div>
+                </div>
+
+                <!-- App Icon -->
+                <div class="card variant-card">
+                    <div class="variant-preview" style="background-color: var(--brand-blue); border-radius: 20px;">
+                        <img src="/balaji-logo.svg" alt="App Icon" style="width: 60px; height: 60px;">
+                    </div>
+                    <div class="card-title">App Icon</div>
+                    <div class="card-label">Mobile Applications</div>
+                </div>
+
+                <!-- White Logo -->
+                <div class="card variant-card">
+                    <div class="variant-preview dark-bg">
+                        <img src="/balaji-logo.svg" alt="White Logo" style="opacity: 0.9;">
+                    </div>
+                    <div class="card-title">White Logo</div>
+                    <div class="card-label">Dark Backgrounds</div>
+                </div>
+
+                <!-- Black Logo -->
+                <div class="card variant-card">
+                    <div class="variant-preview" style="background: #F8F8F8;">
+                        <img src="/balaji-logo.svg" alt="Black Logo" style="opacity: 0.8;">
+                    </div>
+                    <div class="card-title">Black Logo</div>
+                    <div class="card-label">Light Backgrounds</div>
+                </div>
+
+                <!-- Monochrome -->
+                <div class="card variant-card">
+                    <div class="variant-preview">
+                        <img src="/balaji-logo.svg" alt="Monochrome Logo" style="opacity: 0.6;">
+                    </div>
+                    <div class="card-title">Monochrome Logo</div>
+                    <div class="card-label">B&W Print</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 2: RECOMMENDED SIZES -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Recommended Logo Sizes</h2>
+                <p class="section-description">Optimized dimensions for every application and platform</p>
+            </div>
+
+            <h3 style="font-size: 16px; font-weight: 600; color: var(--text-primary); margin-bottom: 24px; margin-top: 40px;">
+                <span class="badge">Favicon</span>
+            </h3>
+            <div class="sizes-grid">
+                <div class="card size-card">
+                    <div class="size-preview">
+                        <img src="/balaji-logo.svg" alt="16x16" style="width: 16px; height: 16px;">
+                    </div>
+                    <div class="size-dimensions">16 × 16 px</div>
+                    <div class="size-usage">Tiny icon</div>
+                </div>
+                <div class="card size-card">
+                    <div class="size-preview">
+                        <img src="/balaji-logo.svg" alt="32x32" style="width: 32px; height: 32px;">
+                    </div>
+                    <div class="size-dimensions">32 × 32 px</div>
+                    <div class="size-usage">Tab icon</div>
+                </div>
+                <div class="card size-card">
+                    <div class="size-preview">
+                        <img src="/balaji-logo.svg" alt="48x48" style="width: 48px; height: 48px;">
+                    </div>
+                    <div class="size-dimensions">48 × 48 px</div>
+                    <div class="size-usage">App shortcut</div>
+                </div>
+            </div>
+
+            <h3 style="font-size: 16px; font-weight: 600; color: var(--text-primary); margin-bottom: 24px; margin-top: 40px;">
+                <span class="badge">Mobile App Icon</span>
+            </h3>
+            <div class="sizes-grid">
+                <div class="card size-card">
+                    <div class="size-preview" style="height: 140px;">
+                        <img src="/balaji-logo.svg" alt="1024x1024">
+                    </div>
+                    <div class="size-dimensions">1024 × 1024 px</div>
+                    <div class="size-usage">App store</div>
+                </div>
+            </div>
+
+            <h3 style="font-size: 16px; font-weight: 600; color: var(--text-primary); margin-bottom: 24px; margin-top: 40px;">
+                <span class="badge">Notification Icon</span>
+            </h3>
+            <div class="sizes-grid">
+                <div class="card size-card">
+                    <div class="size-preview">
+                        <img src="/balaji-logo.svg" alt="48x48" style="width: 48px; height: 48px;">
+                    </div>
+                    <div class="size-dimensions">48 × 48 px</div>
+                    <div class="size-usage">Push notification</div>
+                </div>
+            </div>
+
+            <h3 style="font-size: 16px; font-weight: 600; color: var(--text-primary); margin-bottom: 24px; margin-top: 40px;">
+                <span class="badge">Website Header</span>
+            </h3>
+            <div class="sizes-grid">
+                <div class="card size-card">
+                    <div class="size-preview">
+                        <img src="/balaji-logo.svg" alt="180x50">
+                    </div>
+                    <div class="size-dimensions">180 × 50 px</div>
+                    <div class="size-usage">Desktop header</div>
+                </div>
+                <div class="card size-card">
+                    <div class="size-preview">
+                        <img src="/balaji-logo.svg" alt="150x40">
+                    </div>
+                    <div class="size-dimensions">150 × 40 px</div>
+                    <div class="size-usage">Tablet header</div>
+                </div>
+                <div class="card size-card">
+                    <div class="size-preview">
+                        <img src="/balaji-logo.svg" alt="120x32">
+                    </div>
+                    <div class="size-dimensions">120 × 32 px</div>
+                    <div class="size-usage">Mobile header</div>
+                </div>
+            </div>
+
+            <h3 style="font-size: 16px; font-weight: 600; color: var(--text-primary); margin-bottom: 24px; margin-top: 40px;">
+                <span class="badge">Other Sizes</span>
+            </h3>
+            <div class="sizes-grid">
+                <div class="card size-card">
+                    <div class="size-preview">
+                        <img src="/balaji-logo.svg" alt="120x40">
+                    </div>
+                    <div class="size-dimensions">120 × 40 px</div>
+                    <div class="size-usage">Footer logo</div>
+                </div>
+                <div class="card size-card">
+                    <div class="size-preview">
+                        <img src="/balaji-logo.svg" alt="90x30">
+                    </div>
+                    <div class="size-dimensions">90 × 30 px</div>
+                    <div class="size-usage">Email signature</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3: FILE FORMATS -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">File Formats</h2>
+                <p class="section-description">Professional format guide for different use cases</p>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Format</th>
+                            <th>Use For</th>
+                            <th>Recommended Size</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>SVG</td>
+                            <td>Vector Graphics</td>
+                            <td>Infinite Scale</td>
+                            <td>Best for websites. Scalable without quality loss. Master format.</td>
+                        </tr>
+                        <tr>
+                            <td>PNG</td>
+                            <td>Transparent Images</td>
+                            <td>1024, 512, 256, 128, 64</td>
+                            <td>Best quality. Use for high-fidelity needs. Export at 2x resolution.</td>
+                        </tr>
+                        <tr>
+                            <td>WEBP</td>
+                            <td>Web Optimized</td>
+                            <td>Same as PNG</td>
+                            <td>Fast loading. Modern browsers. 25-35% smaller than PNG.</td>
+                        </tr>
+                        <tr>
+                            <td>JPG</td>
+                            <td>Documents & Print</td>
+                            <td>180 × 50 px</td>
+                            <td>No transparency. Good for traditional print and documents.</td>
+                        </tr>
+                        <tr>
+                            <td>ICO</td>
+                            <td>Favicon</td>
+                            <td>16×16, 32×32, 48×48</td>
+                            <td>Browser icon. Multiple sizes in one file. Use favicon.ico</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- SECTION 4: LOGO USAGE GUIDELINES -->
+        <div class="section">
+            <div class="section-header">
+                <h2 class="section-title">Logo Usage Guidelines</h2>
+                <p class="section-description">Best practices for maintaining brand consistency</p>
+            </div>
+
+            <div class="guidelines-grid">
+                <div class="card guidelines-card guidelines-do">
+                    <div class="guidelines-title">✓ Do's</div>
+                    <ul class="guidelines-list">
+                        <li>Maintain clear space (minimum 20% of logo height)</li>
+                        <li>Keep original brand colors vibrant</li>
+                        <li>Use SVG format whenever possible</li>
+                        <li>Preserve original aspect ratio</li>
+                        <li>Use transparent PNG when needed</li>
+                        <li>Keep minimum size at 120px width</li>
+                        <li>Test on all intended backgrounds</li>
+                    </ul>
+                </div>
+
+                <div class="card guidelines-card guidelines-dont">
+                    <div class="guidelines-title">✕ Don'ts</div>
+                    <ul class="guidelines-list">
+                        <li>Never stretch or distort the logo</li>
+                        <li>Never rotate or skew the logo</li>
+                        <li>Never add shadows or effects</li>
+                        <li>Never change brand colors</li>
+                        <li>Never place on busy backgrounds</li>
+                        <li>Never use blurred or low-resolution versions</li>
+                        <li>Never combine with other logos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER NOTE -->
+        <div class="footer">
+            <div class="footer-title">🎨 Brand Asset Management</div>
+            <div class="footer-text">
+                Keep the original SVG file as the master logo.<br>
+                Export PNG, WEBP, JPG and ICO formats from the SVG master file.<br>
+                Store all formats in organized folders: <code style="background: rgba(0,0,0,0.05); padding: 2px 6px; border-radius: 4px;">/logos/{format}/{size}/</code><br>
+                Update this presentation whenever logo variants are modified.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
