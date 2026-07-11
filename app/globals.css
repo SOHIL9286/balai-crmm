@@ -1,15 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --background: #eef6ff;
-  --foreground: #102a43;
+  --background: #f4f8ff;
+  --foreground: #0f172a;
   --surface: #ffffff;
   --surface-muted: #f8fbff;
-  --border: #d7e7fb;
-  --brand-blue: #0f66d1;
-  --brand-blue-soft: #e7f0ff;
-  --brand-green: #16a34a;
+  --border: #d9e6ff;
+  --brand-blue: #0f4cff;
+  --brand-blue-soft: #e8f0ff;
+  --brand-green: #22c55e;
   --brand-green-soft: #ecfdf3;
+  --brand-orange: #f59e0b;
+  --brand-orange-soft: #fff7e6;
   --text-muted: #5b7288;
 }
 
@@ -29,7 +31,7 @@ html {
 body {
   min-height: 100vh;
   margin: 0;
-  background: var(--background);
+  background: linear-gradient(135deg, #f4f8ff 0%, #eef4ff 100%);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
   font-feature-settings: "cv11", "ss01";
@@ -64,4 +66,9 @@ a,
 span,
 div {
   font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+::selection {
+  background: rgba(15, 76, 255, 0.15);
+  color: #071738;
 }

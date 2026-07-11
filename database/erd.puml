@@ -1,0 +1,184 @@
+@startuml
+hide circle
+skinparam linetype ortho
+
+entity Organizations {
+  * id : UUID
+  --
+  company_name
+  company_code
+  gst_number
+  pan_number
+}
+
+entity Branches {
+  * id : UUID
+  --
+  organization_id : UUID
+  branch_name
+  branch_code
+}
+
+entity Users {
+  * id : UUID
+  --
+  organization_id : UUID
+  branch_id : UUID
+  employee_code
+  name
+  mobile
+  email
+  role
+}
+
+entity Customers {
+  * id : UUID
+  --
+  organization_id : UUID
+  branch_id : UUID
+  name
+  mobile
+  pan_number
+  gst_number
+  customer_status
+}
+
+entity Vehicles {
+  * id : UUID
+  --
+  customer_id : UUID
+  registration_number
+  manufacturer
+  model
+  insurance_expiry
+}
+
+entity InsuranceCompanies {
+  * id : UUID
+  --
+  company_name
+  short_name
+  status
+}
+
+entity Policies {
+  * id : UUID
+  --
+  customer_id : UUID
+  vehicle_id : UUID
+  insurance_company_id : UUID
+  policy_number
+  policy_type
+  premium
+  net_premium
+  status
+}
+
+entity LiveQuotations {
+  * id : UUID
+  --
+  customer_id : UUID
+  vehicle_id : UUID
+  insurance_company_id : UUID
+  quotation_number
+  final_premium
+  is_selected
+}
+
+entity Claims {
+  * id : UUID
+  --
+  policy_id : UUID
+  customer_id : UUID
+  vehicle_id : UUID
+  claim_number
+  claim_amount
+  status
+}
+
+entity RtoServices {
+  * id : UUID
+  --
+  customer_id : UUID
+  vehicle_id : UUID
+  service_type
+  due_date
+  status
+}
+
+entity FinanceRecords {
+  * id : UUID
+  --
+  customer_id : UUID
+  vehicle_id : UUID
+  policy_id : UUID
+  loan_amount
+  outstanding_amount
+  status
+}
+
+entity Leads {
+  * id : UUID
+  --
+  customer_id : UUID
+  assigned_to : UUID
+  status
+  expected_premium
+  next_follow_up_date
+}
+
+entity FollowUps {
+  * id : UUID
+  --
+  customer_id : UUID
+  lead_id : UUID
+  follow_up_date
+  notes
+}
+
+entity Payments {
+  * id : UUID
+  --
+  receipt_number
+  invoice_number
+  payment_mode
+  amount
+  balance
+}
+
+entity Renewals {
+  * id : UUID
+  --
+  policy_id : UUID
+  customer_id : UUID
+  vehicle_id : UUID
+  due_date
+  status
+}
+
+Organizations ||--o{ Branches
+Organizations ||--o{ Users
+Organizations ||--o{ Customers
+Organizations ||--o{ InsuranceCompanies
+Organizations ||--o{ Policies
+Organizations ||--o{ LiveQuotations
+Organizations ||--o{ Claims
+Organizations ||--o{ RtoServices
+Organizations ||--o{ FinanceRecords
+Organizations ||--o{ Leads
+Organizations ||--o{ FollowUps
+Organizations ||--o{ Payments
+Organizations ||--o{ Renewals
+
+Customers ||--o{ Vehicles
+Customers ||--o{ Policies
+Customers ||--o{ Leads
+Customers ||--o{ FollowUps
+
+Policies ||--o{ Claims
+Policies ||--o{ Renewals
+Policies ||--o{ FinanceRecords
+
+InsuranceCompanies ||--o{ Policies
+InsuranceCompanies ||--o{ LiveQuotations
+@enduml

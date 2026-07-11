@@ -1,0 +1,35 @@
+erDiagram
+    ORGANIZATIONS ||--o{ BRANCHES : has
+    ORGANIZATIONS ||--o{ USERS : owns
+    ORGANIZATIONS ||--o{ CUSTOMERS : serves
+    ORGANIZATIONS ||--o{ INSURANCE_COMPANIES : manages
+    ORGANIZATIONS ||--o{ POLICIES : records
+    ORGANIZATIONS ||--o{ LIVE_QUOTATIONS : tracks
+    ORGANIZATIONS ||--o{ CLAIMS : tracks
+    ORGANIZATIONS ||--o{ RTO_SERVICES : manages
+    ORGANIZATIONS ||--o{ FINANCE_RECORDS : handles
+    ORGANIZATIONS ||--o{ LEADS : manages
+    ORGANIZATIONS ||--o{ FOLLOW_UPS : logs
+    ORGANIZATIONS ||--o{ PAYMENTS : records
+    ORGANIZATIONS ||--o{ EXPENSES : controls
+    ORGANIZATIONS ||--o{ COMMISSIONS : calculates
+    ORGANIZATIONS ||--o{ RENEWALS : schedules
+    ORGANIZATIONS ||--o{ DOCUMENTS : stores
+    ORGANIZATIONS ||--o{ WHATSAPP_REMINDER_LOGS : sends
+    ORGANIZATIONS ||--o{ ACTIVITY_LOGS : audits
+
+    CUSTOMERS ||--o{ VEHICLES : owns
+    CUSTOMERS ||--o{ POLICIES : holds
+    CUSTOMERS ||--o{ LEADS : generates
+    CUSTOMERS ||--o{ FOLLOW_UPS : receives
+    CUSTOMERS ||--o{ DOCUMENTS : has
+    CUSTOMERS ||--o{ WHATSAPP_REMINDER_LOGS : receives
+
+    POLICIES ||--o{ CLAIMS : covers
+    POLICIES ||--o{ RENEWALS : renews
+    POLICIES ||--o{ COMMISSIONS : accrues
+    POLICIES ||--o{ FINANCE_RECORDS : finances
+
+    INSURANCE_COMPANIES ||--o{ POLICIES : underwrites
+    INSURANCE_COMPANIES ||--o{ LIVE_QUOTATIONS : quotes
+    INSURANCE_COMPANIES ||--o{ COMMISSIONS : pays

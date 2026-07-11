@@ -1,10 +1,20 @@
+"use client";
+
 import Link from "next/link";
+import { useActionState } from "react";
 import { signInWithEmail } from "@/app/login/actions";
 import { AttecheLogo } from "@/app/components/AttecheLogo";
 
 function LoginForm() {
+  const [state, formAction, isPending] = useActionState(signInWithEmail, null);
+
   return (
-    <form action={signInWithEmail} className="space-y-5">
+    <form action={formAction} className="space-y-5">
+      {state?.error && (
+        <div className="rounded-2xl border border-red-200 bg-red-50 p-4 text-sm font-medium text-red-600">
+          {state.error}
+        </div>
+      )}
       <label className="block text-sm font-medium text-slate-700">
         Email
         <input
@@ -12,7 +22,8 @@ function LoginForm() {
           type="email"
           required
           placeholder="you@balaji.com"
-          className="mt-3 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-slate-400"
+          className="mt-3 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-slate-400 disabled:opacity-55"
+          disabled={isPending}
         />
       </label>
       <label className="block text-sm font-medium text-slate-700">
@@ -22,14 +33,16 @@ function LoginForm() {
           type="password"
           required
           placeholder="••••••••"
-          className="mt-3 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-slate-400"
+          className="mt-3 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-slate-400 disabled:opacity-55"
+          disabled={isPending}
         />
       </label>
       <button
         type="submit"
-        className="w-full rounded-2xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
+        disabled={isPending}
+        className="w-full rounded-2xl bg-slate-900 px-4 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        Sign in
+        {isPending ? "Signing in..." : "Sign in"}
       </button>
     </form>
   );
